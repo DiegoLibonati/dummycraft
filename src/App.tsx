@@ -1,28 +1,34 @@
 import { useState } from "react";
-import { Paragraphs } from "./components/Paragraphs.tsx";
-import { texts } from "./helpers/texts.ts";
+
+import { Paragraph } from "./components/Paragraph";
+
+import { texts } from "./constants/texts.ts";
 
 import "./App.css";
 
 function App() {
   const [paragraphs, setParagraphs] = useState<string[]>([]);
-  const [count, setCount] = useState<number>(0);
+  const [amount, setAmount] = useState<number>(0);
+
+  const handleInputChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
+    const value = parseInt(e.target.value);
+
+    setAmount(value);
+  };
 
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
 
-    const newArray: string[] = [];
-    let amount: number = count;
+    const arr: string[] = [];
 
-    if (amount <= 0) {
-      amount = 1;
-    }
+    if (amount <= 0) return setParagraphs([]);
 
     for (let i: number = 0; i < amount; i++) {
-      newArray.push(texts[Math.floor(Math.random() * texts.length)]);
+      const randomParagraph = texts[Math.floor(Math.random() * texts.length)];
+      arr.push(randomParagraph);
     }
 
-    setParagraphs(newArray);
+    setParagraphs(arr);
   };
 
   return (
@@ -31,13 +37,15 @@ function App() {
         <article className="header_container">
           <h2>TIRED OF BORING LOREM IPSUM?</h2>
 
-          <form onSubmit={(e) => handleSubmit(e)}>
+          <form onSubmit={handleSubmit}>
             <input
               type="number"
-              onChange={(e) => setCount(parseInt(e.target.value))}
-              value={count}
+              onChange={handleInputChange}
+              value={amount}
             ></input>
-            <button type="submit">GENERATE</button>
+            <button type="submit" aria-label="generate">
+              GENERATE
+            </button>
           </form>
         </article>
 
@@ -45,7 +53,7 @@ function App() {
 
         <article className="ps_container">
           {paragraphs.map((p, index) => (
-            <Paragraphs key={index * 584} text={p}></Paragraphs>
+            <Paragraph key={`p_${index}`} text={p}></Paragraph>
           ))}
         </article>
       </section>
