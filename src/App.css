@@ -1,23 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@300&display=swap");
-
-* {
-  font-family: Rajdhani, Arial, sans-serif;
-  padding: 0;
-  margin: 0;
-  font-size: 10px;
-  box-sizing: border-box;
-}
-
-img {
-  max-width: 100%;
-}
-
-body {
-  height: 100%;
-  width: 100%;
-}
-
-.main_container {
+.main {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -25,7 +6,7 @@ body {
   height: 100%;
 }
 
-.generator_container {
+.app {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -34,7 +15,7 @@ body {
   height: 100%;
 }
 
-.header_container {
+.header {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -43,12 +24,12 @@ body {
   height: 20rem;
 }
 
-.header_container h2 {
+.header h2 {
   font-size: 2.5rem;
   text-align: center;
 }
 
-.header_container form {
+.header form {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -57,19 +38,19 @@ body {
   height: auto;
 }
 
-.header_container input {
+.header input {
   width: 6rem;
   outline: none;
   font-size: 2rem;
   height: 4rem;
 }
 
-.header_container button {
+.header button {
   margin-left: 1rem;
-  background: #09f;
+  background: var(--primary-color);
   border: none;
   font-size: 2rem;
-  color: #fff;
+  color: var(--white-color);
   height: 4rem;
   padding-left: 1rem;
   padding-right: 1rem;

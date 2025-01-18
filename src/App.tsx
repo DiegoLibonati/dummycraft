@@ -32,9 +32,9 @@ function App() {
   };
 
   return (
-    <main className="main_container">
-      <section className="generator_container">
-        <article className="header_container">
+    <main className="main">
+      <section className="app">
+        <article className="header">
           <h2>TIRED OF BORING LOREM IPSUM?</h2>
 
           <form onSubmit={handleSubmit}>
@@ -51,7 +51,7 @@ function App() {
 
         <hr />
 
-        <article className="ps_container">
+        <article className="paragraphs">
           {paragraphs.map((p, index) => (
             <Paragraph key={`p_${index}`} text={p}></Paragraph>
           ))}

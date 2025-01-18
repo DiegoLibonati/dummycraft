@@ -20,10 +20,14 @@ const renderComponent = (): RenderComponent => {
   };
 };
 
-test("It should render the text entered by props.", () => {
-  const { props } = renderComponent();
+describe("Paragraph.tsx", () => {
+  describe("General Tests.", () => {
+    test("It should render the text entered by props.", () => {
+      const { props } = renderComponent();
 
-  const paragraph = screen.getByText(props.text);
+      const paragraph = screen.getByText(props.text);
 
-  expect(paragraph).toBeInTheDocument();
+      expect(paragraph).toBeInTheDocument();
+    });
+  });
 });
