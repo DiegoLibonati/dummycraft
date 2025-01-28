@@ -1,7 +1,9 @@
+import "./Paragraph.css";
+
 interface ParagraphProps {
   text: string;
 }
 
 export const Paragraph = ({ text }: ParagraphProps) => {
-  return <p>{text}</p>;
+  return <p className="paragraph">{text}</p>;
 };

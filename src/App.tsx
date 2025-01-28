@@ -32,24 +32,31 @@ function App() {
   };
 
   return (
-    <main className="main">
-      <section className="app">
-        <article className="header">
-          <h2>TIRED OF BORING LOREM IPSUM?</h2>
+    <main className="main-app">
+      <section className="lorem-ipsum">
+        <article className="lorem-ipsum__header">
+          <h2 className="lorem-ipsum__header-title">
+            TIRED OF BORING LOREM IPSUM?
+          </h2>
 
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} className="lorem-ipsum__header-form">
             <input
               type="number"
               onChange={handleInputChange}
               value={amount}
+              className="lorem-ipsum__header-form-input"
             ></input>
-            <button type="submit" aria-label="generate">
+            <button
+              type="submit"
+              aria-label="generate"
+              className="lorem-ipsum__header-form-submit"
+            >
               GENERATE
             </button>
           </form>
         </article>
 
-        <hr />
+        <hr className="lorem-ipsum__separator" />
 
         <article className="paragraphs">
           {paragraphs.map((p, index) => (

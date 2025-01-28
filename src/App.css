@@ -1,4 +1,4 @@
-.main {
+.main-app {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -6,7 +6,7 @@
   height: 100%;
 }
 
-.app {
+.lorem-ipsum {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -15,7 +15,7 @@
   height: 100%;
 }
 
-.header {
+.lorem-ipsum__header {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -24,12 +24,12 @@
   height: 20rem;
 }
 
-.header h2 {
+.lorem-ipsum__header-title {
   font-size: 2.5rem;
   text-align: center;
 }
 
-.header form {
+.lorem-ipsum__header-form {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -38,14 +38,14 @@
   height: auto;
 }
 
-.header input {
+.lorem-ipsum__header-form-input {
   width: 6rem;
   outline: none;
   font-size: 2rem;
   height: 4rem;
 }
 
-.header button {
+.lorem-ipsum__header-form-submit {
   margin-left: 1rem;
   background: var(--primary-color);
   border: none;
@@ -58,13 +58,6 @@
   outline: none;
 }
 
-p {
-  text-align: center;
-  padding: 1rem;
-  font-size: 1.5rem;
-  font-weight: 600;
-}
-
-hr {
+.lorem-ipsum__separator {
   width: 100%;
 }
