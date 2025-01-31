@@ -35,21 +35,21 @@ function App() {
     <main className="main-app">
       <section className="lorem-ipsum">
         <article className="lorem-ipsum__header">
-          <h2 className="lorem-ipsum__header-title">
+          <h2 className="lorem-ipsum__title">
             TIRED OF BORING LOREM IPSUM?
           </h2>
 
-          <form onSubmit={handleSubmit} className="lorem-ipsum__header-form">
+          <form onSubmit={handleSubmit} className="lorem-ipsum__form">
             <input
               type="number"
               onChange={handleInputChange}
               value={amount}
-              className="lorem-ipsum__header-form-input"
+              className="lorem-ipsum__form-input"
             ></input>
             <button
               type="submit"
               aria-label="generate"
-              className="lorem-ipsum__header-form-submit"
+              className="lorem-ipsum__form-submit"
             >
               GENERATE
             </button>

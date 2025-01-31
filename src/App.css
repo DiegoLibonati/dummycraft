@@ -24,12 +24,12 @@
   height: 20rem;
 }
 
-.lorem-ipsum__header-title {
+.lorem-ipsum__title {
   font-size: 2.5rem;
   text-align: center;
 }
 
-.lorem-ipsum__header-form {
+.lorem-ipsum__form {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -38,14 +38,14 @@
   height: auto;
 }
 
-.lorem-ipsum__header-form-input {
+.lorem-ipsum__form-input {
   width: 6rem;
   outline: none;
   font-size: 2rem;
   height: 4rem;
 }
 
-.lorem-ipsum__header-form-submit {
+.lorem-ipsum__form-submit {
   margin-left: 1rem;
   background: var(--primary-color);
   border: none;
