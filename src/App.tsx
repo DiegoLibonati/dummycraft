@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import { Paragraph } from "./components/Paragraph";
 
-import { texts } from "./constants/texts.ts";
+import { texts } from "./constants/texts";
 
 import "./App.css";
 
