@@ -1,4 +1,4 @@
-import "./Paragraph.css";
+import "@src/components/Paragraph.css";
 
 interface ParagraphProps {
   text: string;

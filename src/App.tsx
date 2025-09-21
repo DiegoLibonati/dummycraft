@@ -1,10 +1,10 @@
 import { useState } from "react";
 
-import { Paragraph } from "./components/Paragraph";
+import { Paragraph } from "@src/components/Paragraph";
 
-import { texts } from "./constants/texts";
+import { texts } from "@src/constants/texts";
 
-import "./App.css";
+import "@src/App.css";
 
 function App() {
   const [paragraphs, setParagraphs] = useState<string[]>([]);

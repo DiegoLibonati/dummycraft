@@ -1,6 +1,6 @@
 import { screen, render } from "@testing-library/react";
 
-import { Paragraph } from "./Paragraph";
+import { Paragraph } from "@src/components/Paragraph";
 
 type RenderComponent = {
   props: { text: string };
