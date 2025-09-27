@@ -22,6 +22,7 @@ I made a web application that generates lorem ipsum paragraphs each time the use
 1. React JS
 2. Typescript
 3. CSS3
+4. Vite
 
 ## Libraries used
 
