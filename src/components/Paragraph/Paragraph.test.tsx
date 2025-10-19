@@ -1,18 +1,20 @@
 import { screen, render } from "@testing-library/react";
 
-import { Paragraph } from "@src/components/Paragraph";
+import { ParagraphProps } from "@src/entities/props";
+
+import { Paragraph } from "@src/components/Paragraph/Paragraph";
 
 type RenderComponent = {
-  props: { text: string };
+  props: ParagraphProps;
   container: HTMLElement;
 };
 
 const renderComponent = (): RenderComponent => {
   const props = {
-    text: "hola 1234",
+    children: "hola 1234",
   };
 
-  const { container } = render(<Paragraph text={props.text}></Paragraph>);
+  const { container } = render(<Paragraph>{props.children}</Paragraph>);
 
   return {
     props: props,
@@ -25,7 +27,7 @@ describe("Paragraph.tsx", () => {
     test("It should render the text entered by props.", () => {
       const { props } = renderComponent();
 
-      const paragraph = screen.getByText(props.text);
+      const paragraph = screen.getByText(props.children as string);
 
       expect(paragraph).toBeInTheDocument();
     });

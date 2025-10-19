@@ -1,21 +1,21 @@
 import { screen, render } from "@testing-library/react";
 import user from "@testing-library/user-event";
 
-import App from "@src/App";
+import { LoremIpsumPage } from "@src/pages/LoremIpsumPage/LoremIpsumPage";
 
 type RenderComponent = {
   container: HTMLElement;
 };
 
 const renderComponent = (): RenderComponent => {
-  const { container } = render(<App></App>);
+  const { container } = render(<LoremIpsumPage></LoremIpsumPage>);
 
   return {
     container: container,
   };
 };
 
-describe("App.tsx", () => {
+describe("LoremIpsumPage.tsx", () => {
   describe("General Tests.", () => {
     test("It must render the page title.", () => {
       renderComponent();
@@ -30,7 +30,6 @@ describe("App.tsx", () => {
     test("It must render the numerical input and the generate button.", () => {
       const { container } = renderComponent();
 
-      // eslint-disable-next-line
       const inputNumber = container.querySelector("input") as HTMLInputElement;
       const btnSubmit = screen.getByRole("button", { name: /generate/i });
 
@@ -43,7 +42,6 @@ describe("App.tsx", () => {
 
       const { container } = renderComponent();
 
-      // eslint-disable-next-line
       const inputNumber = container.querySelector("input") as HTMLInputElement;
       const btnSubmit = screen.getByRole("button", { name: /generate/i });
       const articles = screen.getAllByRole("article");
@@ -54,7 +52,6 @@ describe("App.tsx", () => {
       expect(inputNumber).toBeInTheDocument();
       expect(btnSubmit).toBeInTheDocument();
       expect(paragraphContainer).toBeInTheDocument();
-      // eslint-disable-next-line
       expect(paragraphContainer?.children).toHaveLength(0);
 
       await user.click(inputNumber);
@@ -64,7 +61,6 @@ describe("App.tsx", () => {
 
       await user.click(btnSubmit);
 
-      // eslint-disable-next-line
       expect(paragraphContainer?.children).toHaveLength(amount);
     });
 
@@ -73,7 +69,6 @@ describe("App.tsx", () => {
 
       const { container } = renderComponent();
 
-      // eslint-disable-next-line
       const inputNumber = container.querySelector("input") as HTMLInputElement;
       const btnSubmit = screen.getByRole("button", { name: /generate/i });
       const articles = screen.getAllByRole("article");
@@ -84,7 +79,6 @@ describe("App.tsx", () => {
       expect(inputNumber).toBeInTheDocument();
       expect(btnSubmit).toBeInTheDocument();
       expect(paragraphContainer).toBeInTheDocument();
-      // eslint-disable-next-line
       expect(paragraphContainer?.children).toHaveLength(0);
 
       await user.click(inputNumber);
@@ -94,7 +88,6 @@ describe("App.tsx", () => {
 
       await user.click(btnSubmit);
 
-      // eslint-disable-next-line
       expect(paragraphContainer?.children).toHaveLength(amount);
     });
   });
