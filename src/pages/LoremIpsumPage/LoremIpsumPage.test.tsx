@@ -30,7 +30,7 @@ describe("LoremIpsumPage.tsx", () => {
     test("It must render the numerical input and the generate button.", () => {
       const { container } = renderComponent();
 
-      const inputNumber = container.querySelector("input") as HTMLInputElement;
+      const inputNumber = container.querySelector<HTMLInputElement>("input");
       const btnSubmit = screen.getByRole("button", { name: /generate/i });
 
       expect(inputNumber).toBeInTheDocument();
@@ -42,7 +42,7 @@ describe("LoremIpsumPage.tsx", () => {
 
       const { container } = renderComponent();
 
-      const inputNumber = container.querySelector("input") as HTMLInputElement;
+      const inputNumber = container.querySelector<HTMLInputElement>("input");
       const btnSubmit = screen.getByRole("button", { name: /generate/i });
       const articles = screen.getAllByRole("article");
       const paragraphContainer = articles.find((article) =>
@@ -54,7 +54,7 @@ describe("LoremIpsumPage.tsx", () => {
       expect(paragraphContainer).toBeInTheDocument();
       expect(paragraphContainer?.children).toHaveLength(0);
 
-      await user.click(inputNumber);
+      await user.click(inputNumber!);
       await user.keyboard(String(amount));
 
       expect(inputNumber).toHaveValue(amount);
@@ -69,7 +69,7 @@ describe("LoremIpsumPage.tsx", () => {
 
       const { container } = renderComponent();
 
-      const inputNumber = container.querySelector("input") as HTMLInputElement;
+      const inputNumber = container.querySelector<HTMLInputElement>("input");
       const btnSubmit = screen.getByRole("button", { name: /generate/i });
       const articles = screen.getAllByRole("article");
       const paragraphContainer = articles.find((article) =>
@@ -81,7 +81,7 @@ describe("LoremIpsumPage.tsx", () => {
       expect(paragraphContainer).toBeInTheDocument();
       expect(paragraphContainer?.children).toHaveLength(0);
 
-      await user.click(inputNumber);
+      await user.click(inputNumber!);
       await user.keyboard(String(amount));
 
       expect(inputNumber).toHaveValue(amount);
