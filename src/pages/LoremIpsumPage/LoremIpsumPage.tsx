@@ -13,7 +13,7 @@ const LoremIpsumPage = () => {
   const handleInputChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
     const value = parseInt(e.target.value);
 
-    setAmount(value);
+    setAmount(isNaN(value) ? 0 : value);
   };
 
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
@@ -32,27 +32,36 @@ const LoremIpsumPage = () => {
   };
 
   return (
-    <main className="main-app">
-      <section className="lorem-ipsum">
+    <main className="main-app" aria-label="Lorem ipsum generator application">
+      <section className="lorem-ipsum" aria-label="Lorem ipsum generator">
         <article className="lorem-ipsum__header">
           <h2 className="lorem-ipsum__title">TIRED OF BORING LOREM IPSUM?</h2>
 
-          <form onSubmit={handleSubmit} className="lorem-ipsum__form">
+          <form
+            onSubmit={handleSubmit}
+            className="lorem-ipsum__form"
+            aria-label="Paragraph generator form"
+          >
             <input
               type="number"
               onChange={handleInputChange}
               value={amount}
               className="lorem-ipsum__form-input"
+              aria-label="Number of paragraphs to generate"
             ></input>
-            <button type="submit" aria-label="generate" className="lorem-ipsum__form-submit">
+            <button
+              type="submit"
+              aria-label="Generate lorem ipsum paragraphs"
+              className="lorem-ipsum__form-submit"
+            >
               GENERATE
             </button>
           </form>
         </article>
 
-        <hr className="lorem-ipsum__separator" />
+        <hr className="lorem-ipsum__separator" aria-hidden="true" />
 
-        <article className="paragraphs">
+        <article className="paragraphs" aria-label="Generated paragraphs" aria-live="polite">
           {paragraphs.map((p, index) => (
             <Paragraph key={`p_${index}`}>{p}</Paragraph>
           ))}
