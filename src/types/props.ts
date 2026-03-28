@@ -3,4 +3,6 @@ interface DefaultProps {
   children?: React.ReactNode;
 }
 
-export interface ParagraphProps extends DefaultProps {}
+export interface ParagraphProps extends DefaultProps {
+  test?: unknown;
+}

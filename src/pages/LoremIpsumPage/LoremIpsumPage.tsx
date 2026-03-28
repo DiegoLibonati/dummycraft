@@ -1,12 +1,12 @@
 import { useState } from "react";
 
-import { Paragraph } from "@src/components/Paragraph/Paragraph";
+import Paragraph from "@/components/Paragraph/Paragraph";
 
-import paragraphsData from "@src/constants/paragraphs";
+import paragraphsData from "@/constants/paragraphs";
 
-import "@src/pages/LoremIpsumPage/LoremIpsumPage.css";
+import "@/pages/LoremIpsumPage/LoremIpsumPage.css";
 
-export const LoremIpsumPage = () => {
+const LoremIpsumPage = () => {
   const [paragraphs, setParagraphs] = useState<string[]>([]);
   const [amount, setAmount] = useState<number>(0);
 
@@ -24,9 +24,8 @@ export const LoremIpsumPage = () => {
     if (amount <= 0) return setParagraphs([]);
 
     for (let i: number = 0; i < amount; i++) {
-      const randomParagraph =
-        paragraphsData[Math.floor(Math.random() * paragraphsData.length)];
-      arr.push(randomParagraph);
+      const randomParagraph = paragraphsData[Math.floor(Math.random() * paragraphsData.length)];
+      arr.push(randomParagraph!);
     }
 
     setParagraphs(arr);
@@ -45,11 +44,7 @@ export const LoremIpsumPage = () => {
               value={amount}
               className="lorem-ipsum__form-input"
             ></input>
-            <button
-              type="submit"
-              aria-label="generate"
-              className="lorem-ipsum__form-submit"
-            >
+            <button type="submit" aria-label="generate" className="lorem-ipsum__form-submit">
               GENERATE
             </button>
           </form>
@@ -66,3 +61,5 @@ export const LoremIpsumPage = () => {
     </main>
   );
 };
+
+export default LoremIpsumPage;

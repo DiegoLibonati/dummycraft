@@ -1,7 +1,9 @@
-import { ParagraphProps } from "@src/entities/props";
+import { ParagraphProps } from "@/types/props";
 
-import "@src/components/Paragraph/Paragraph.css";
+import "@/components/Paragraph/Paragraph.css";
 
-export const Paragraph = ({ children }: ParagraphProps) => {
+const Paragraph = ({ children }: ParagraphProps) => {
   return <p className="paragraph">{children}</p>;
 };
+
+export default Paragraph;

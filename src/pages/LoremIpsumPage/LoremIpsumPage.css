@@ -47,10 +47,10 @@
 
 .lorem-ipsum__form-submit {
   margin-left: 1rem;
-  background: var(--primary-color);
+  background: var(--color-primary);
   border: none;
   font-size: 2rem;
-  color: var(--white-color);
+  color: var(--color-white);
   height: 4rem;
   padding-left: 1rem;
   padding-right: 1rem;
