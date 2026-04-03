@@ -1,6 +1,7 @@
 import { render, screen } from "@testing-library/react";
 
 import type { ParagraphProps } from "@/types/props";
+
 import Paragraph from "@/components/Paragraph/Paragraph";
 
 type RenderComponent = {
