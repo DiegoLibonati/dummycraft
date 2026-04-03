@@ -21,6 +21,10 @@ const renderComponent = (overrides?: Partial<ParagraphProps>): RenderComponent =
 };
 
 describe("Paragraph", () => {
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
+
   it("should render a paragraph element with the correct class", () => {
     const { container } = renderComponent();
     expect(container.querySelector<HTMLParagraphElement>("p.paragraph")).toBeInTheDocument();

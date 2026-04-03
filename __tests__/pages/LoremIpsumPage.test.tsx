@@ -13,6 +13,10 @@ const renderPage = (): RenderPage => {
 };
 
 describe("LoremIpsumPage", () => {
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
+
   it("should render the page title", () => {
     renderPage();
     expect(
