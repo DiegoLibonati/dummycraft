@@ -1,6 +1,8 @@
+import type { JSX } from "react";
+
 import LoremIpsumPage from "@/pages/LoremIpsumPage/LoremIpsumPage";
 
-function App() {
+function App(): JSX.Element {
   return <LoremIpsumPage></LoremIpsumPage>;
 }
 

@@ -1,14 +1,16 @@
 import { useState } from "react";
 
+import type { JSX } from "react";
+
 import Paragraph from "@/components/Paragraph/Paragraph";
 
 import paragraphsData from "@/constants/paragraphs";
 
 import "@/pages/LoremIpsumPage/LoremIpsumPage.css";
 
-const LoremIpsumPage = () => {
+const LoremIpsumPage = (): JSX.Element => {
   const [paragraphs, setParagraphs] = useState<string[]>([]);
-  const [amount, setAmount] = useState<number>(0);
+  const [amount, setAmount] = useState(0);
 
   const handleInputChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
     const value = parseInt(e.target.value);
@@ -16,14 +18,17 @@ const LoremIpsumPage = () => {
     setAmount(isNaN(value) ? 0 : value);
   };
 
-  const handleSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
+  const handleSubmit: React.SubmitEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
 
     const arr: string[] = [];
 
-    if (amount <= 0) return setParagraphs([]);
+    if (amount <= 0) {
+      setParagraphs([]);
+      return;
+    }
 
-    for (let i: number = 0; i < amount; i++) {
+    for (let i = 0; i < amount; i++) {
       const randomParagraph = paragraphsData[Math.floor(Math.random() * paragraphsData.length)];
       arr.push(randomParagraph!);
     }

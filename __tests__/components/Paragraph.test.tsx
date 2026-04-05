@@ -4,10 +4,10 @@ import type { ParagraphProps } from "@/types/props";
 
 import Paragraph from "@/components/Paragraph/Paragraph";
 
-type RenderComponent = {
+interface RenderComponent {
   container: HTMLElement;
   props: ParagraphProps;
-};
+}
 
 const renderComponent = (overrides?: Partial<ParagraphProps>): RenderComponent => {
   const props: ParagraphProps = {

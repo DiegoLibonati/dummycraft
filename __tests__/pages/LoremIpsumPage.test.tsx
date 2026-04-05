@@ -3,9 +3,9 @@ import userEvent from "@testing-library/user-event";
 
 import LoremIpsumPage from "@/pages/LoremIpsumPage/LoremIpsumPage";
 
-type RenderPage = {
+interface RenderPage {
   container: HTMLElement;
-};
+}
 
 const renderPage = (): RenderPage => {
   const { container } = render(<LoremIpsumPage />);
