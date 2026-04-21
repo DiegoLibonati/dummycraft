@@ -1,7 +1,7 @@
 {
-  "name": "Lorem Ipsum React",
-  "short_name": "Lorem Ipsum",
-  "description": "I made a web application that generates lorem ipsum paragraphs each time the user enters a number and press `Generate`. The allowed values are between 1 to infinite paragraphs. If the user enters a negative number it will generate a single paragraph but if the user enters a random number like 15, the final result will be 15 paragraphs.",
+  "name": "Dummycraft",
+  "short_name": "Dummycraft",
+  "description": "Dummycraft is a web application that instantly generates Lorem Ipsum placeholder text on demand.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",

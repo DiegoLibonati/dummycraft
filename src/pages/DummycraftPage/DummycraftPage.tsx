@@ -6,9 +6,9 @@ import Paragraph from "@/components/Paragraph/Paragraph";
 
 import paragraphsData from "@/constants/paragraphs";
 
-import "@/pages/LoremIpsumPage/LoremIpsumPage.css";
+import "@/pages/DummycraftPage/DummycraftPage.css";
 
-const LoremIpsumPage = (): JSX.Element => {
+const DummycraftPage = (): JSX.Element => {
   const [paragraphs, setParagraphs] = useState<string[]>([]);
   const [amount, setAmount] = useState(0);
 
@@ -38,33 +38,33 @@ const LoremIpsumPage = (): JSX.Element => {
 
   return (
     <main className="main-app" aria-label="Lorem ipsum generator application">
-      <section className="lorem-ipsum" aria-label="Lorem ipsum generator">
-        <article className="lorem-ipsum__header">
-          <h2 className="lorem-ipsum__title">TIRED OF BORING LOREM IPSUM?</h2>
+      <section className="dummycraft" aria-label="Lorem ipsum generator">
+        <article className="dummycraft__header">
+          <h2 className="dummycraft__title">TIRED OF BORING LOREM IPSUM?</h2>
 
           <form
             onSubmit={handleSubmit}
-            className="lorem-ipsum__form"
+            className="dummycraft__form"
             aria-label="Paragraph generator form"
           >
             <input
               type="number"
               onChange={handleInputChange}
               value={amount}
-              className="lorem-ipsum__form-input"
+              className="dummycraft__form-input"
               aria-label="Number of paragraphs to generate"
             ></input>
             <button
               type="submit"
               aria-label="Generate lorem ipsum paragraphs"
-              className="lorem-ipsum__form-submit"
+              className="dummycraft__form-submit"
             >
               GENERATE
             </button>
           </form>
         </article>
 
-        <hr className="lorem-ipsum__separator" aria-hidden="true" />
+        <hr className="dummycraft__separator" aria-hidden="true" />
 
         <article className="paragraphs" aria-label="Generated paragraphs" aria-live="polite">
           {paragraphs.map((p, index) => (
@@ -76,4 +76,4 @@ const LoremIpsumPage = (): JSX.Element => {
   );
 };
 
-export default LoremIpsumPage;
+export default DummycraftPage;

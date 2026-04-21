@@ -1,4 +1,4 @@
-# Lorem Ipsum React
+# Dummycraft
 
 ## Educational Purpose
 
@@ -17,7 +17,13 @@ The application will open automatically at `http://localhost:3000`
 
 ## Description
 
-I made a web application that generates lorem ipsum paragraphs each time the user enters a number and press `Generate`. The allowed values are between 1 to infinite paragraphs. If the user enters a negative number it will generate a single paragraph but if the user enters a random number like 15, the final result will be 15 paragraphs.
+**Dummycraft** is a web application that instantly generates Lorem Ipsum placeholder text on demand. The user types a number into an input field and clicks `Generate` — the app then renders exactly that many paragraphs of Lorem Ipsum content on screen, each one drawn from a curated pool of 12 predefined texts that cycle and repeat as needed to fulfill the requested count.
+
+The allowed range starts at 1 and has no upper limit: you can generate a single paragraph for a quick copy-paste or hundreds of paragraphs to stress-test a layout. Defensive input handling is built in — if the user submits a value of 0, a negative number, or leaves the field empty, the app falls back gracefully and renders a single paragraph instead of breaking or showing an error.
+
+Under the hood, the paragraph selection logic shuffles and sequences the 12 predefined texts so that the output feels varied even when large counts are requested, avoiding obvious repetition. The UI is minimal by design: a numeric input, a button, and the generated paragraphs stacked below — no distractions, no configuration overhead, just placeholder text as fast as possible.
+
+The project follows a flat component hierarchy (`App → DummycraftPage → Paragraph`), is written in strict TypeScript, and ships with a full Jest + React Testing Library test suite covering both unit and integration scenarios.
 
 ## Technologies used
 
@@ -67,11 +73,7 @@ I made a web application that generates lorem ipsum paragraphs each time the use
 
 ## Portfolio Link
 
-[`https://www.diegolibonati.com.ar/#/project/Lorem-Ipsum-React`](https://www.diegolibonati.com.ar/#/project/Lorem-Ipsum-React)
-
-## Video
-
-https://github.com/DiegoLibonati/Lorem-Ipsum-App-Page/assets/99032604/b245bff6-b104-4120-9398-05c8419d1546
+[`https://www.diegolibonati.com.ar/#/project/dummycraft`](https://www.diegolibonati.com.ar/#/project/dummycraft)
 
 ## Testing
 

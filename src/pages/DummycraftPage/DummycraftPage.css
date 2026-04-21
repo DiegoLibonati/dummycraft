@@ -6,7 +6,7 @@
   height: 100%;
 }
 
-.lorem-ipsum {
+.dummycraft {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -15,7 +15,7 @@
   height: 100%;
 }
 
-.lorem-ipsum__header {
+.dummycraft__header {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -24,12 +24,12 @@
   height: 12.5rem;
 }
 
-.lorem-ipsum__title {
+.dummycraft__title {
   font-size: 1.5625rem;
   text-align: center;
 }
 
-.lorem-ipsum__form {
+.dummycraft__form {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -38,14 +38,14 @@
   height: auto;
 }
 
-.lorem-ipsum__form-input {
+.dummycraft__form-input {
   width: 3.75rem;
   outline: none;
   font-size: 1.25rem;
   height: 2.5rem;
 }
 
-.lorem-ipsum__form-submit {
+.dummycraft__form-submit {
   margin-left: 0.625rem;
   background: var(--color-primary);
   border: none;
@@ -58,6 +58,6 @@
   outline: none;
 }
 
-.lorem-ipsum__separator {
+.dummycraft__separator {
   width: 100%;
 }

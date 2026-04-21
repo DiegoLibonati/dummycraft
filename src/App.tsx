@@ -1,9 +1,9 @@
 import type { JSX } from "react";
 
-import LoremIpsumPage from "@/pages/LoremIpsumPage/LoremIpsumPage";
+import DummycraftPage from "@/pages/DummycraftPage/DummycraftPage";
 
 function App(): JSX.Element {
-  return <LoremIpsumPage></LoremIpsumPage>;
+  return <DummycraftPage></DummycraftPage>;
 }
 
 export default App;
