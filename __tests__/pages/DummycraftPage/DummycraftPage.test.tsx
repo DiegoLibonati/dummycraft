@@ -41,7 +41,7 @@ describe("DummycraftPage", () => {
 
     it("should not render any paragraphs initially", () => {
       const { container } = renderPage();
-      expect(container.querySelectorAll("p.paragraph")).toHaveLength(0);
+      expect(container.querySelectorAll<HTMLParagraphElement>("p.paragraph")).toHaveLength(0);
     });
 
     it("should render the form with accessible label", () => {
@@ -66,14 +66,14 @@ describe("DummycraftPage", () => {
       await user.clear(input);
       await user.type(input, "3");
       await user.click(screen.getByRole("button", { name: "Generate lorem ipsum paragraphs" }));
-      expect(container.querySelectorAll("p.paragraph")).toHaveLength(3);
+      expect(container.querySelectorAll<HTMLParagraphElement>("p.paragraph")).toHaveLength(3);
     });
 
     it("should not render paragraphs when amount is 0 and form is submitted", async () => {
       const user = userEvent.setup();
       const { container } = renderPage();
       await user.click(screen.getByRole("button", { name: "Generate lorem ipsum paragraphs" }));
-      expect(container.querySelectorAll("p.paragraph")).toHaveLength(0);
+      expect(container.querySelectorAll<HTMLParagraphElement>("p.paragraph")).toHaveLength(0);
     });
 
     it("should clear paragraphs when submitting with amount 0 after having paragraphs", async () => {
@@ -85,10 +85,10 @@ describe("DummycraftPage", () => {
       await user.clear(input);
       await user.type(input, "2");
       await user.click(screen.getByRole("button", { name: "Generate lorem ipsum paragraphs" }));
-      expect(container.querySelectorAll("p.paragraph")).toHaveLength(2);
+      expect(container.querySelectorAll<HTMLParagraphElement>("p.paragraph")).toHaveLength(2);
       await user.clear(input);
       await user.click(screen.getByRole("button", { name: "Generate lorem ipsum paragraphs" }));
-      expect(container.querySelectorAll("p.paragraph")).toHaveLength(0);
+      expect(container.querySelectorAll<HTMLParagraphElement>("p.paragraph")).toHaveLength(0);
     });
 
     it("should replace existing paragraphs on subsequent submissions", async () => {
@@ -100,11 +100,11 @@ describe("DummycraftPage", () => {
       await user.clear(input);
       await user.type(input, "4");
       await user.click(screen.getByRole("button", { name: "Generate lorem ipsum paragraphs" }));
-      expect(container.querySelectorAll("p.paragraph")).toHaveLength(4);
+      expect(container.querySelectorAll<HTMLParagraphElement>("p.paragraph")).toHaveLength(4);
       await user.clear(input);
       await user.type(input, "2");
       await user.click(screen.getByRole("button", { name: "Generate lorem ipsum paragraphs" }));
-      expect(container.querySelectorAll("p.paragraph")).toHaveLength(2);
+      expect(container.querySelectorAll<HTMLParagraphElement>("p.paragraph")).toHaveLength(2);
     });
 
     it("should update the input value when the user types a number", async () => {
@@ -128,7 +128,7 @@ describe("DummycraftPage", () => {
       });
       fireEvent.change(input, { target: { value: "-1" } });
       await user.click(screen.getByRole("button", { name: "Generate lorem ipsum paragraphs" }));
-      expect(container.querySelectorAll("p.paragraph")).toHaveLength(0);
+      expect(container.querySelectorAll<HTMLParagraphElement>("p.paragraph")).toHaveLength(0);
     });
 
     it("should reset amount to 0 when non-numeric input is entered", async () => {
@@ -150,7 +150,7 @@ describe("DummycraftPage", () => {
       await user.clear(input);
       await user.type(input, "1");
       await user.click(screen.getByRole("button", { name: "Generate lorem ipsum paragraphs" }));
-      expect(container.querySelectorAll("p.paragraph")).toHaveLength(1);
+      expect(container.querySelectorAll<HTMLParagraphElement>("p.paragraph")).toHaveLength(1);
     });
   });
 });

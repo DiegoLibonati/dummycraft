@@ -22,12 +22,12 @@ describe("Paragraph", () => {
 
     it("should render with the paragraph class", () => {
       const { container } = renderComponent();
-      expect(container.querySelector("p")).toHaveClass("paragraph");
+      expect(container.querySelector<HTMLParagraphElement>("p")).toHaveClass("paragraph");
     });
 
     it("should render as a p element", () => {
       const { container } = renderComponent();
-      expect(container.querySelector("p")).toBeInTheDocument();
+      expect(container.querySelector<HTMLParagraphElement>("p")).toBeInTheDocument();
     });
 
     it("should render different children correctly", () => {
