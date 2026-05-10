@@ -6,15 +6,6 @@ This project was created primarily for **educational and learning purposes**.
 While it is well-structured and could technically be used in production, it is **not intended for commercialization**.  
 The main goal is to explore and demonstrate best practices, patterns, and technologies in software development.
 
-## Getting Started
-
-1. Clone the repository
-2. Navigate to the project folder
-3. Execute: `npm install`
-4. Execute: `npm run dev`
-
-The application will open automatically at `http://localhost:3000`
-
 ## Description
 
 **Dummycraft** is a web application that instantly generates Lorem Ipsum placeholder text on demand. The user types a number into an input field and clicks `Generate` — the app then renders exactly that many paragraphs of Lorem Ipsum content on screen, each one drawn from a curated pool of 12 predefined texts that cycle and repeat as needed to fulfill the requested count.
@@ -72,11 +63,20 @@ The project follows a flat component hierarchy (`App → DummycraftPage → Para
 "vite": "^7.1.6"
 ```
 
-## Portfolio Link
+## Getting Started
 
-[`https://www.diegolibonati.com.ar/#/project/dummycraft`](https://www.diegolibonati.com.ar/#/project/dummycraft)
+With the stack and dependencies above in mind, here is how to run the project locally:
+
+1. Clone the repository
+2. Navigate to the project folder
+3. Execute: `npm install`
+4. Execute: `npm run dev`
+
+The application will open automatically at `http://localhost:3000`
 
 ## Testing
+
+Once the app runs locally, you can validate behavior with the test suite:
 
 1. Navigate to the project folder
 2. Execute: `npm test`
@@ -87,7 +87,9 @@ For coverage report:
 npm run test:coverage
 ```
 
-## Security
+## Security Audit
+
+Beyond functional tests, the project ships with two security/health checks:
 
 ### npm audit
 
@@ -114,3 +116,7 @@ npm run doctor -- --verbose
 ## Known Issues
 
 None at the moment.
+
+## Portfolio Link
+
+[`https://www.diegolibonati.com.ar/#/project/dummycraft`](https://www.diegolibonati.com.ar/#/project/dummycraft)
