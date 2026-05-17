@@ -67,10 +67,11 @@ The project follows a flat component hierarchy (`App → DummycraftPage → Para
 
 With the stack and dependencies above in mind, here is how to run the project locally:
 
-1. Clone the repository
-2. Navigate to the project folder
-3. Execute: `npm install`
-4. Execute: `npm run dev`
+1. Make sure you are using Node `22` (see `.nvmrc`)
+2. Clone the repository
+3. Navigate to the project folder
+4. Execute: `npm install`
+5. Execute: `npm run dev`
 
 The application will open automatically at `http://localhost:3000`
 
@@ -85,6 +86,43 @@ For coverage report:
 
 ```bash
 npm run test:coverage
+```
+
+## Continuous Integration
+
+The repository ships with a **GitHub Actions** pipeline defined in [`.github/workflows/ci.yml`](.github/workflows/ci.yml). It runs automatically on every `push` and `pull_request` targeting the `main` branch, chaining three sequential jobs that gate the branch on code quality, tests, and a production build.
+
+### Pipeline overview
+
+```
+                 ┌─── PR or push to main ───┐
+                 ▼                          ▼
+┌──────────────────────┐  ┌──────────────────┐  ┌──────────────────┐
+│   lint-and-audit     │─▶│      testing     │─▶│       build      │
+│ eslint · type-check  │  │   jest (jsdom)   │  │ tsc + vite build │
+└──────────────────────┘  └──────────────────┘  └──────────────────┘
+```
+
+Each job spins up a fresh `ubuntu-latest` runner, installs Node using the version pinned in [`.nvmrc`](.nvmrc) (Node `22`) with npm cache enabled, and runs `npm ci` before its specific step.
+
+### Validation jobs (run on every PR and push)
+
+1. **`lint-and-audit`** — `npm run lint` (ESLint over `src`) followed by `npm run type-check` (`tsc -p tsconfig.app.json --noEmit`). Fails fast on style or type errors before any tests run.
+2. **`testing`** — depends on `lint-and-audit`. Runs `npm run test`, executing the full Jest + React Testing Library suite under `jest-environment-jsdom`. The `coverageThreshold` of 70% (branches, functions, lines, statements) configured in [`jest.config.js`](jest.config.js) is enforced when coverage runs.
+3. **`build`** — depends on `testing`. Runs `npm run build`, which type-checks the app with `tsc -p tsconfig.app.json` and produces the production bundle with `vite build`. Catches build-only regressions (e.g. broken imports under production minification, missing assets) that the dev server tolerates.
+
+### Running the same checks locally
+
+```bash
+# lint-and-audit
+npm run lint
+npm run type-check
+
+# testing
+npm run test
+
+# build
+npm run build
 ```
 
 ## Security Audit
